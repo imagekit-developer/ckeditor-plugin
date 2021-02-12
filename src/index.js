@@ -4,7 +4,7 @@ import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 // This means that imagekitLogo will hold the source SVG.
 import imagekitLogo from './../assets/imagekit-logo.svg';
 
-class ImagekitMediaLibraryWidget extends Plugin {
+export class ImagekitMediaLibraryWidget extends Plugin {
     init() {
         const editor = this.editor || window.editor;
 
@@ -27,5 +27,3 @@ class ImagekitMediaLibraryWidget extends Plugin {
         });
     }
 }
-
-export default { ImagekitMediaLibraryWidget };
