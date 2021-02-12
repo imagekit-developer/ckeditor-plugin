@@ -10,12 +10,13 @@ With this plugin, you can directly insert images from your ImageKit account into
 
 To install this plugin, you should make a custom build of CKEditor 5. Follow the instructions [here](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html).
 
-### Quick custom build
+### Custom CKEditor quick build
 
-Fork the stable branch of CKEditor 5 repository:
+Fork the stable branch of CKEditor 5 repository, then clone it locally:
 
 ```
 git clone -b stable git@github.com:<your-username>/ckeditor5.git
+cd ckeditor5
 git remote add upstream https://github.com/ckeditor/ckeditor5.git
 ```
 
@@ -34,22 +35,36 @@ npm install --save-dev imagekit-ckeditor5-plugin
 
 ## Configuration
 
-To load the plugin, configure your editor by editing the `ckeditor.js` file. To use the Media Library Widget, import it as follows:
+To load the plugin, configure your editor by editing the `src/ckeditor.js` file. To use the Media Library Widget, import it as follows:
 
 ```js
-// custom plugin
+/* ckeditor5-build-classic/src/ckeditor.js */
+
+// ...imported modules
+// custom plugin import
 import { ImagekitMediaLibraryWidget } from 'imagekit-ckeditor5-plugin';
 
-class Editor extends ClassicEditor {}
+export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
-Editor.builtinPlugins = [
+ClassicEditor.builtinPlugins = [
   // include custom plugin in build
   ImagekitMediaLibraryWidget,
   // ...other components
 ];
 
-export default Editor;
+// COnfigure the `imagekitMediaLibraryWidget` plugin to display on the editor toolbar
+ClassicEditor.defaultConfig = {
+  toolbar: {
+    items: [
+      'imagekitMediaLibraryWidget',
+      // ...other ckeditor plugins
+    ]
+  },
+  // ...other settings
+  language: 'en'
+};
+
 ```
 
 ### Build the editor
@@ -61,7 +76,7 @@ npm run build
 Copy the built files into the source of your webpage which will host the editor:
 
 ```
-cp build/ckeditor* <path_to_your_web_project_>
+cp build/ckeditor* <path_to_your_web_project>
 ```
 
 ## Include the plugin in the frontend
@@ -84,17 +99,7 @@ var editor;
 
 // initialize ckeditor
 ClassicEditor
-  .create(document.querySelector('.editor'), {
-    toolbar: {
-      items: [
-        // include custom IK ckeditor plugin
-        'imagekitMediaLibraryWidget',
-        // other ckeditor plugins
-        // ...
-      ]
-    },
-    // other settings
-  })
+  .create(document.querySelector('.editor'))
   .then(newEditor => {
     editor = newEditor;
     window.editor = newEditor;
