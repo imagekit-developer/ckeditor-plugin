@@ -10,10 +10,25 @@ With this plugin, you can directly insert images from your ImageKit account into
 
 To install this plugin, you should make a custom build of CKEditor 5. Follow the instructions [here](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html).
 
-Install the plugin in your custom CKEditor project folder:
+### Quick custom build
+
+Fork the stable branch of CKEditor 5 repository:
 
 ```
-cd <path_to_custom_ckeditor_build>
+git clone -b stable git@github.com:<your-username>/ckeditor5.git
+git remote add upstream https://github.com/ckeditor/ckeditor5.git
+```
+
+Navigate to the build that will be customized and install dependencies:
+
+```
+cd packages/ckeditor5-build-classic
+npm install
+```
+
+Install the ImageKit CKEditor plugin in your custom build folder:
+
+```
 npm install --save-dev imagekit-ckeditor5-plugin
 ```
 
@@ -43,6 +58,12 @@ export default Editor;
 npm run build
 ``` 
 
+Copy the built files into the source of your webpage which will host the editor:
+
+```
+cp build/ckeditor* <path_to_your_web_project_>
+```
+
 ## Include the plugin in the frontend
 
 Import the generated build files in your frontend project and use it as follows:
@@ -52,7 +73,7 @@ Import the generated build files in your frontend project and use it as follows:
 ```html
 <div class="editor"></div>
 
-<script src="<path_to_custom_ckeditor_build>/ckeditor.js"></script>
+<script src="<path_to_web_project>/ckeditor.js"></script>
 ```
 
 Create an editor instance that includes the `imagekitMediaLibraryWidget` plugin on the toolbar.
