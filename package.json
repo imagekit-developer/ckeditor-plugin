@@ -1,6 +1,6 @@
 {
   "name": "imagekit-ckeditor5-plugin",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1-alpha",
   "description": "CKEditor 5 integration for ImageKit, including Media Library Widget",
   "main": "src/index.js",
   "keywords": [
@@ -35,8 +35,7 @@
   "files": [
     "lang",
     "src",
-    "theme",
-    "assets"
+    "theme"
   ],
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json;npm i;"

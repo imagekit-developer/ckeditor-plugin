@@ -4,7 +4,7 @@ This plugin integrates ImageKit into a custom CKEditor 5 build, allowing you to 
 
 With this plugin, you can directly insert images from your ImageKit account into the editor, as well as upload new images to your Media Library.
 
-<img src="https://gblobscdn.gitbook.com/assets%2F-Lulz44snZCQCyuqQ_vg%2F-MTKIls8r82OVCOK9Ouz%2F-MTKJBxZUiN_G6sSysBN%2Fckeditor-4.png?alt=media&token=ed08a3e0-2912-4d8e-a5b5-5ffdfb85a3c6" alt="Image insertion" />
+![CKEditor plugin](/assets/screenshots/ckeditor-4.png?raw=true "CKEditor custom build with ImageKit plugin")
 
 ## Installation
 
@@ -114,18 +114,18 @@ If configured correctly, the plugin will be super simple and easy to use!
 
 To open ImageKit view, click on the highlighted icon:
 
-<img src="https://gblobscdn.gitbook.com/assets%2F-Lulz44snZCQCyuqQ_vg%2F-MTKIls8r82OVCOK9Ouz%2F-MTKJ1G6xe7_ZasSbmDn%2Fckeditor-1.png?alt=media&token=e79921eb-518b-4bfe-aed8-f7bc7667ca4a" alt="CKEditor custom build" />
+![CKEditor custom build](/assets/screenshots/ckeditor-1.png?raw=true)
 
 If you are not logged in already, do so using your ImageKit username and password.
 
-<img src="https://gblobscdn.gitbook.com/assets%2F-Lulz44snZCQCyuqQ_vg%2F-MTKIls8r82OVCOK9Ouz%2F-MTKJ4y7g3vcZMixU_i5%2Fckeditor-2.png?alt=media&token=226ae5c8-b8dd-46b0-b3c6-56da4eda1947" alt="ImageKit widget view" />
+![ImageKit widget dialog](/assets/screenshots/ckeditor-2.png?raw=true)
 
 The Media Library view should open right up, letting you search and select existing images, as well as upload new ones directly.
 
-<img src="https://gblobscdn.gitbook.com/assets%2F-Lulz44snZCQCyuqQ_vg%2F-MTKIls8r82OVCOK9Ouz%2F-MTKJ8WKd7dZ9-6JoE4g%2Fckeditor-3.png?alt=media&token=4790b4d7-8fc3-44cc-95f8-4327048f26fb" alt="Media Library" />
+![ImageKit Media Library View](/assets/screenshots/ckeditor-3.png?raw=true)
 
 To insert one or more images into the CKEditor panel, select them and click the "Insert" button in the top right hand area.
 
-<img src="https://gblobscdn.gitbook.com/assets%2F-Lulz44snZCQCyuqQ_vg%2F-MTKIls8r82OVCOK9Ouz%2F-MTKJBxZUiN_G6sSysBN%2Fckeditor-4.png?alt=media&token=ed08a3e0-2912-4d8e-a5b5-5ffdfb85a3c6" alt="Image insertion" />
+![Image insertion](/assets/screenshots/ckeditor-4.png?raw=true)
 
 The modal dialog will close and selected images will be inserted into the editor automatically!
