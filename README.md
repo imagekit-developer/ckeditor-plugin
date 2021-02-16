@@ -4,7 +4,7 @@ This plugin integrates ImageKit into a custom CKEditor 5 build, allowing you to 
 
 With this plugin, you can directly insert images from your ImageKit account into the editor, as well as upload new images to your Media Library.
 
-![CKEditor plugin](/assets/screenshots/ckeditor-4.png?raw=true "CKEditor custom build with ImageKit plugin")
+![CKEditor plugin](/assets/gifs/01-mlw-ck.gif?raw=true "CKEditor custom build with ImageKit plugin")
 
 ## Installation
 
@@ -81,17 +81,34 @@ cp build/ckeditor* <path_to_your_web_project>
 
 ## Include the plugin in the frontend
 
-Import the generated build files in your frontend project and use it as follows:
-
-**Example:**
+Import the generated build files in your frontend project:
 
 ```html
-<div class="editor"></div>
-
 <script src="<path_to_web_project>/ckeditor.js"></script>
 ```
 
-Create an editor instance that includes the `imagekitMediaLibraryWidget` plugin on the toolbar.
+Provide HTML container elements for widget instance as well as editor instance:
+
+```html
+<div class="editor"></div>
+<div class="ml-container"></div>
+```
+
+Create a JavaScript object with configuration options for the plugin:
+
+```js
+var pluginOptions = {
+  name: 'Media Library Widget',
+  container: '.ml-container',
+  className: 'media-library-widget',
+  dimensions: {
+    height: '100%',
+    width: '100%',
+  },
+};
+```
+
+Create an editor instance that includes the `imagekitMediaLibraryWidget` plugin on the toolbar, with its configuration options.
 
 ```js
 // ckeditor
@@ -99,7 +116,11 @@ var editor;
 
 // initialize ckeditor
 ClassicEditor
-  .create(document.querySelector('.editor'))
+  .create(document.querySelector('.editor'), {
+      imagekitMediaLibraryWidget: {
+        config: pluginOptions
+      }
+    })
   .then(newEditor => {
     editor = newEditor;
     window.editor = newEditor;
@@ -110,8 +131,7 @@ ClassicEditor
 
 ## Usage
 
-If configured correctly, the plugin will be super simple and easy to use!
-
+Open a browser and navigate to your app with the CKEditor instance. It should look similar to the image below.
 To open ImageKit view, click on the highlighted icon:
 
 ![CKEditor custom build](/assets/screenshots/ckeditor-1.png?raw=true)
