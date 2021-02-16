@@ -1,6 +1,6 @@
 {
   "name": "imagekit-ckeditor5-plugin",
-  "version": "0.1.1-alpha",
+  "version": "0.1.2-alpha",
   "description": "CKEditor 5 integration for ImageKit, including Media Library Widget",
   "main": "src/index.js",
   "keywords": [
@@ -17,7 +17,7 @@
     "@ckeditor/ckeditor5-engine": "^24.0.0",
     "@ckeditor/ckeditor5-ui": "^24.0.0",
     "@ckeditor/ckeditor5-utils": "^24.0.0",
-    "imagekit-media-library-widget": "^1.0.0-alpha.0"
+    "imagekit-media-library-widget": "^1.0.0-alpha.1"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-essentials": "^24.0.0"
