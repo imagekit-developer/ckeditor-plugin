@@ -19,7 +19,6 @@ export class ImagekitMediaLibraryWidget extends Plugin {
 
             // media-library-widget plugin
             const config = {
-                name: pluginOptions.name,
                 container: pluginOptions.container,
                 className: pluginOptions.className,
                 dimensions: {
@@ -27,7 +26,7 @@ export class ImagekitMediaLibraryWidget extends Plugin {
                     width: pluginOptions.dimensions.width,
                 },
                 view: 'modal',
-                showOpenButton: false,
+                renderOpenButton: false,
             };
 
             function callback(payload) {

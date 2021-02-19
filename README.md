@@ -1,16 +1,16 @@
 # ImageKit CKEditor 5 Plugin
 
-This plugin integrates ImageKit into a custom CKEditor 5 build, allowing you to use the embedded Media Library Widget from within your CKEditor UI. 
+This plugin integrates ImageKit into CKEditor 5, allowing you to access the embedded Media Library Widget through your CKEditor toolbar. 
 
 With this plugin, you can directly insert images from your ImageKit account into the editor, as well as upload new images to your Media Library.
 
-![CKEditor plugin](/assets/gifs/01-mlw-ck.gif?raw=true "CKEditor custom build with ImageKit plugin")
+![CKEditor plugin](/assets/gifs/01-mlw-ck.gif)
 
 ## Installation
 
-To install this plugin, you should make a custom build of CKEditor 5. Follow the instructions [here](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html).
+To install this plugin, you should make a custom build of CKEditor 5. Follow the instructions [here](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html), or use the quickstart steps below.
 
-### Custom CKEditor quick build
+### CKEditor quickstart
 
 Fork the stable branch of CKEditor 5 repository, then clone it locally:
 
@@ -20,7 +20,7 @@ cd ckeditor5
 git remote add upstream https://github.com/ckeditor/ckeditor5.git
 ```
 
-Navigate to the build that will be customized and install dependencies:
+Navigate to the build that will be customized and install dependencies. We will use the classic build:
 
 ```
 cd packages/ckeditor5-build-classic
@@ -98,7 +98,6 @@ Create a JavaScript object with configuration options for the plugin:
 
 ```js
 var pluginOptions = {
-  name: 'Media Library Widget',
   container: '.ml-container',
   className: 'media-library-widget',
   dimensions: {
@@ -134,18 +133,24 @@ ClassicEditor
 Open a browser and navigate to your app with the CKEditor instance. It should look similar to the image below.
 To open ImageKit view, click on the highlighted icon:
 
-![CKEditor custom build](/assets/screenshots/ckeditor-1.png?raw=true)
+![CKEditor custom build](/assets/screenshots/ckeditor-1.png)
 
 If you are not logged in already, do so using your ImageKit username and password.
 
-![ImageKit widget dialog](/assets/screenshots/ckeditor-2.png?raw=true)
+![ImageKit widget dialog](/assets/screenshots/ckeditor-2.png)
 
 The Media Library view should open right up, letting you search and select existing images, as well as upload new ones directly.
 
-![ImageKit Media Library View](/assets/screenshots/ckeditor-3.png?raw=true)
+![ImageKit Media Library View](/assets/screenshots/ckeditor-3.png)
 
 To insert one or more images into the CKEditor panel, select them and click the "Insert" button in the top right hand area.
 
-![Image insertion](/assets/screenshots/ckeditor-4.png?raw=true)
+![Image insertion](/assets/screenshots/ckeditor-4.png)
 
 The modal dialog will close and selected images will be inserted into the editor automatically!
+
+**Note: Google Chrome (Incognito)**
+
+In order to use this plugin on Google Chrome in Incognito mode, you need to enable third-party cookies:
+
+![07-mlw-incognito.png](assets/screenshots/07-mlw-incognito.png)
