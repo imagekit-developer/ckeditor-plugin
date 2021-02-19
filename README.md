@@ -6,24 +6,40 @@ With this plugin, you can directly insert images from your ImageKit account into
 
 ![CKEditor plugin](/assets/gifs/01-mlw-ck.gif)
 
-## Installation
+## Table of Contents
 
-To install this plugin, you should make a custom build of CKEditor 5. Follow the instructions [here](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html), or use the quickstart steps below.
+1. [Installation and build](#installation-and-build)
+    1. [Version support](#version-support)
+    1. [CKEditor quickstart](#ckeditor-quickstart)
+    1. [Configuration](#configuration)
+    1. [Build the editor](#build-the-editor)
+1. [Frontend installation](#frontend-installation)
+1. [Usage](#usage)
+
+## Installation and build
+
+To install this plugin, you should make a custom build of CKEditor 5. Use the quickstart steps below, or follow the instructions [here](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html).
+
+### Version support
+
+**The following versions of CKEditor core packages are supported so far:**
+
+- [v24.0.0](https://github.com/ckeditor/ckeditor5/releases/tag/v24.0.0)
+
+If you are making the custom build by following the instructions on CKEditor website, please ensure that all CKEditor-related packages you install belong to a single one of the supported versions. Otherwise, the build will throw ["ckeditor-duplicated-modules" error](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/error-codes.html#error-ckeditor-duplicated-modules) in the browser and fail to work.
 
 ### CKEditor quickstart
 
-Fork the stable branch of CKEditor 5 repository, then clone it locally:
+Clone the CKEditor 5 repository at the latest supported version:
 
 ```
-git clone -b stable git@github.com:<your-username>/ckeditor5.git
-cd ckeditor5
-git remote add upstream https://github.com/ckeditor/ckeditor5.git
+git clone --depth 1 --branch v24.0.0 https://github.com/ckeditor/ckeditor5.git
 ```
 
 Navigate to the build that will be customized and install dependencies. We will use the classic build:
 
 ```
-cd packages/ckeditor5-build-classic
+cd ckeditor5/packages/ckeditor5-build-classic
 npm install
 ```
 
@@ -33,9 +49,9 @@ Install the ImageKit CKEditor plugin in your custom build folder:
 npm install --save-dev imagekit-ckeditor5-plugin
 ```
 
-## Configuration
+### Configuration
 
-To load the plugin, configure your editor by editing the `src/ckeditor.js` file. To use the Media Library Widget, import it as follows:
+To load the plugin, configure your editor by editing the `src/ckeditor.js` file that belongs to the chosen build. Import the Media Library Widget within it as follows:
 
 ```js
 /* ckeditor5-build-classic/src/ckeditor.js */
@@ -76,10 +92,10 @@ npm run build
 Copy the built files into the source of your webpage which will host the editor:
 
 ```
-cp build/ckeditor* <path_to_your_web_project>
+cp -r build/ <path_to_your_web_project>
 ```
 
-## Include the plugin in the frontend
+## Frontend installation
 
 Import the generated build files in your frontend project:
 
