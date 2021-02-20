@@ -1,4 +1,8 @@
+[<img width="250" alt="ImageKit.io" src="https://raw.githubusercontent.com/imagekit-developer/imagekit-javascript/master/assets/imagekit-light-logo.svg"/>](https://imagekit.io)
+
 # ImageKit CKEditor 5 Plugin
+
+[![npm version](https://img.shields.io/npm/v/imagekit-ckeditor5-plugin)](https://www.npmjs.com/package/imagekit-ckeditor5-plugin)
 
 This plugin integrates ImageKit into CKEditor 5, allowing you to access the embedded Media Library Widget through your CKEditor toolbar. 
 
